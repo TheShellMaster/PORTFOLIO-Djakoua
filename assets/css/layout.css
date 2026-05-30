@@ -4,11 +4,33 @@ section { padding: 120px 0; }
 
 /* Hero */
 .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 100px; padding-bottom: 50px;}
-.hero-container { display: flex; align-items: center; justify-content: space-between; gap: 50px; width: 100%; }
-.hero-text { flex: 1; max-width: 700px; }
-.badge { display: inline-block; background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 8px 20px; border-radius: 30px; font-weight: 600; margin-bottom: 20px; font-size: 0.9rem;}
-.hero h1 { font-size: 4rem; margin-bottom: 15px; line-height: 1.2; }
-.hero h2 { font-size: 2rem; color: var(--text-muted); margin-bottom: 20px; min-height: 80px;}
+.hero-container { display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; z-index: 10; min-height: 80vh; }
+.hero-text { flex: 1; max-width: 600px; }
+
+.hero-profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+.hero-profile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    box-shadow: 0 0 20px rgba(0,255,136,0.4);
+    flex-shrink: 0;
+}
+.hero-profile h1 {
+    text-align: left;
+}
+.hero-profile .gradient-text {
+    font-size: 3rem;
+}
+
+.hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
+.hero h2 { font-size: 1.5rem; color: var(--secondary); margin-bottom: 20px; font-weight: 400; height: 35px; }
 .hero p { font-size: 1.1rem; margin-bottom: 40px; color: var(--text-muted); }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 20px; }
 
@@ -207,6 +229,9 @@ canvas { display: block; }
     .hero-container { flex-direction: column; text-align: center; }
     .hero-text { max-width: 100%; }
     .hero-buttons { justify-content: center; }
+    .hero-profile { flex-direction: column; gap: 15px; }
+    .hero-profile h1 { text-align: center; }
+    .hero-profile .gradient-text { font-size: 2.2rem; }
     .about-grid, .two-columns, .form-row { grid-template-columns: 1fr; }
     .hero h1 { font-size: 3.5rem; }
     .nav-links { display: none; }
