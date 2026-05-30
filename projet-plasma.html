@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plasma AI Hermes - TheShellMaster</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar spécifique page projet -->
+    <header class="navbar glass">
+        <div class="logo">THE<span>SHELL</span>MASTER</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-arrow-left"></i> Retour au Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero du projet -->
+    <section class="project-hero">
+        <div class="container text-center">
+            <span class="badge">Intelligence Artificielle</span>
+            <h1 class="gradient-text mt-3">Plasma AI Hermes</h1>
+            <p class="subtitle">Un modèle de langage (LLM) performant de 1.1 Milliard de paramètres.</p>
+        </div>
+    </section>
+
+    <!-- Détails du projet et démonstration -->
+    <section class="project-details">
+        <div class="container">
+            <div class="glass-panel p-5">
+                <h2><i class="fa-solid fa-book"></i> Documentation Technique</h2>
+                <p class="mt-3"><strong>Plasma AI Hermes</strong> est conçu pour comprendre et générer du langage naturel avec une très grande précision tout en restant léger et rapide (1.1B paramètres). Il a été optimisé pour une fenêtre de contexte de 2048 tokens, offrant le parfait équilibre entre performance et efficacité matérielle pour des inférences locales.</p>
+                
+                <h3 class="mt-4"><i class="fa-solid fa-code"></i> Exemple d'utilisation (Python)</h3>
+                <div class="code-block">
+                    <pre><code>from transformers import AutoModelForCausalLM, AutoTokenizer
+
+# Chargement du modèle depuis le repository de TheShellMaster
+model_name = "TheShellMaster/plasma-ai-hermes"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
+
+prompt = "Qu'est-ce que l'intelligence artificielle ?"
+inputs = tokenizer(prompt, return_tensors="pt")
+
+# Génération de la réponse
+outputs = model.generate(**inputs, max_length=100)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))</code></pre>
+                </div>
+
+                <h3 class="mt-4"><i class="fa-solid fa-terminal"></i> Démonstration Interactive (Simulation)</h3>
+                <div class="terminal-mockup">
+                    <div class="terminal-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="title">bash - plasma-ai-hermes</span>
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <p class="sys">System: Loading Plasma AI Hermes (1.1B params)... [OK]</p>
+                        <p class="user"><span class="prompt">TheShellMaster@dev:~$</span> /ask "Comment optimiser un réseau neuronal ?"</p>
+                        <p class="ai" id="ai-response"></p>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-primary" id="run-demo">Lancer la simulation de l'IA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass">
+        <p>Design Premium par <strong>Brayan (TheShellMaster)</strong> &copy; 2026</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
